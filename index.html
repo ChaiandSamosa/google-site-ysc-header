@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CESP Young Scholars Conference</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+
+  .container {
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .logo {
+    max-width: 100px;
+    margin-bottom: 10px;
+  }
+
+  .tagline {
+    font-size: 1.3em;
+    font-weight: 500;
+    color: #2d3e50; /* Dark academic blue */
+    font-style: italic;
+    letter-spacing: 0.5px;
+    height: 40px;
+  }
+
+  /* Fade animation */
+  .fade {
+    animation: fadeInOut 3s ease-in-out infinite;
+  }
+
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    20%, 80% { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img src="https://drive.google.com/file/d/1SrE6ieaVGpxENmretbtftQJ_R4CPyLuV/view?usp=sharing" alt="CESP Logo" class="logo">
+  <div class="tagline" id="tagline">Loading...</div>
+</div>
+
+<script>
+  const lines = [
+    "Empowering Young Economists",
+    "Exploring India’s Economic Challenges",
+    "Innovating for a Better Tomorrow"
+  ];
+  
+  let index = 0;
+  const taglineEl = document.getElementById("tagline");
+
+  function updateTagline() {
+    taglineEl.classList.remove("fade");
+    void taglineEl.offsetWidth; // restart animation
+    taglineEl.textContent = lines[index];
+    taglineEl.classList.add("fade");
+    index = (index + 1) % lines.length;
+  }
+
+  updateTagline();
+  setInterval(updateTagline, 3000);
+</script>
+
+</body>
+</html>
