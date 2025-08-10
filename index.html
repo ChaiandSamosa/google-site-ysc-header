@@ -31,15 +31,16 @@
     height: 40px;
   }
 
-  /* Fade animation */
-  .fade {
-    animation: fadeInOut 3s ease-in-out infinite;
-  }
+  /* Slide animation */
+  @keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+.slide {
+  animation: slideIn 3s ease-out;
+}
 
-  @keyframes fadeInOut {
-    0%, 100% { opacity: 0; }
-    20%, 80% { opacity: 1; }
-  }
+ 
 </style>
 </head>
 <body>
@@ -51,9 +52,10 @@
 
 <script>
   const lines = [
-    "Empowering Young Economists",
-    "Exploring India’s Economic Challenges",
-    "Innovating for a Better Tomorrow"
+    "Every challenge India faces is an invitation to innovate, collaborate, and rise stronger.",
+    "Gathering together is the first step towards discovering solutions and igniting progress.",
+    "It is through dialogue and debate that we build bridges to a brighter future.",
+    "Let us turn thought into action, and challenges into milestones."
   ];
   
   let index = 0;
